@@ -2,12 +2,39 @@
 <html lang="en">
  {{ partial "head" . }}
   <body>
-    <div class="container-fluid">  
+    <div class="container-fluid p-0">  
       <header>
+        <img class="logo" src="/images/big-stone-beer-logo.png" alt="Big Stone Beer logo">
+        <nav>
+          <ul>
+            <li><a href="">About Us</a></li>
+            <li><a href="">Our Beer</a></li>
+            <li><a href="">Contact</a></li>
+          </ul>
+        </nav>
           
     </header>
   {{ block "content" . }}{{ end }}
     </div>
 {{- partial "footer.html" . -}}
-  </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script>
+    $(document).ready(function(){
+    $('.carousel').slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: false,
+        adaptiveHeight: true
+    });
+  });
+  </script>
+  
+<script type="text/javascript" src="https://cookieconsent.popupsmart.com/src/js/popper.js"></script><script> window.start.init({Palette:"palette2",Mode:"banner bottom",Theme:"edgeless",Time:"10",})</script>  
+<body class="{{ .Type }} {{ with .File }}{{ .TranslationBaseName }}{{ end }}">
+  
+  
 </html>

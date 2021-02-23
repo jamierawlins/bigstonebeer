@@ -1,3 +1,38 @@
+/*--------------------------------------------
+MIXINS
+--------------------------------------------*/
+
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+    clear: both;
+    }
+}
+
+/*--------------------------------------------
+MIXINS END
+--------------------------------------------*/
+
+$mount-famine: #177261;
+$downfall: #02A2DC;
+$the-naze: #DC4C26;
+$rough-rock: #BD986C;
+$brierley: #BA1D34;
+$kinder-stout: #BA7320;
+
+html {
+  font-size: 62.5%; /* Sets up the Base 10 stuff */
+
+}
 
 .bsb-logo{
   width:280px;
@@ -7,6 +42,8 @@
 p{
   color:#505050;
   font-size:1.8rem;
+  font-weight:300;
+  line-height: 2.4rem;
 }
 html, body {
   height: 100%;
@@ -29,11 +66,6 @@ body {
   justify-content: center;
   flex-direction: column;
 }
-.row {
-  width: auto;
-  flex-direction: column;
-    align-items: center;
-}
 .flex-item {
 
   padding: 5px;
@@ -46,3 +78,321 @@ body {
   font-size: 2em;
   text-align: center;
 }
+.home-row{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+header{
+  display:none;
+}
+
+/* NEW HOME TO REMOVE ABOUT */
+
+.about{
+
+ 
+header{
+  display:block;
+  width:100%;
+  @media only screen and (min-width:768px){
+    position:absolute;
+    top:0px;
+  }
+}
+section.about{
+  padding:4em;
+  @media only screen and (min-width:768px){
+    columns: 2;
+    column-gap: 7em;
+    padding: 8em 6em;
+  }
+}
+.logo{
+  display:flex;
+  width:40%;
+  align-items: center;
+  justify-content: center;
+  margin:2em auto;
+  @media only screen and (min-width:768px){
+    width: 15%;
+    align-items: center;
+    justify-content: left;
+    margin:2em 2em;
+    max-width: 150px;
+  }
+}
+
+nav{
+  margin:0 0 2em 0;
+  @media only screen and (min-width:768px){
+    position: absolute;
+    top: 2em;
+    right: 4em;
+  }
+  ul{
+    margin:0;
+    padding:0;
+    text-align:center;
+    li{
+      display:inline-block;
+      margin:0 0.6em;
+      @media only screen and (min-width:768px){
+        margin:0 2em;
+      }
+      a{
+        color:#3B3B3B;
+        @include font-size(2.1);
+        text-transform: uppercase;
+        @media only screen and (min-width:768px){
+          @include font-size(1.8);
+        }
+      }
+    }
+  }
+}
+.hero{
+  background-image:url('../images/landscape.jpg');
+  background-size: cover;
+  @media only screen and (min-width:768px){
+    margin-top: 6em;
+    padding: 6em 4em;
+    margin: 6em 0 3em;
+  }
+  @media only screen and (min-width:1024px){
+    padding: 5em 4em 26em 4em
+  }
+  @media only screen and (min-width:1400px){
+    padding: 7em 4em 30em 4em
+  }
+}
+
+h1{
+  color:#fff;
+  @include font-size(2.4);
+  padding:2em 0;
+  text-align:center;
+  text-transform:uppercase;
+  width:50%;
+  margin:0 auto;
+  span{
+    @include font-size(5.4);
+    line-height:0.8em;
+    @media only screen and (min-width:768px){
+      @include font-size(6.4);
+    }
+  }
+}
+.learn{
+  text-align: center;
+  font-weight: 600;
+}
+.bottles{
+  @media only screen and (min-width:768px){
+    margin-top: -11em;
+  }
+  @media only screen and (min-width:1024px){
+    margin-top: -26em;
+  }
+  @media only screen and (min-width:1400px){
+    margin-top: -30em;
+  }
+  .row{
+    div{
+      text-align:center;
+      span{
+        display:block;
+        padding:5em 2em 2em 2em;
+        margin:-4em 0 0 0;
+        transition: all 0.2 ease;
+        -webkit-transition: all 0.2 ease;
+        -moz-transition: all 0.2 ease;
+        -ms-transition: all 0.2 ease;
+        -o-transition: all 0.2 ease;
+      }
+      img{
+        width:100%;
+      }
+      a{
+        color:white;
+        text-transform:uppercase;
+        @include font-size(1.6);
+        @media only screen and (min-width:768px){
+          @include font-size(1);
+        }
+        @media only screen and (min-width:1024px){
+          @include font-size(1.4);
+        }
+        @media only screen and (min-width:1200px){
+          @include font-size(1.8);
+        }
+      }
+      &:hover{
+        span{
+          padding:15em 2em 2em 2em;
+          margin:-14em 0 0 0;
+          transition: all 0.2s ease;
+          -webkit-transition: all 0.2s ease;
+          -moz-transition: all 0.2s ease;
+          -ms-transition: all 0.2s ease;
+          -o-transition: all 0.2s ease;
+        }
+      }
+    }
+    div.mount-famine{
+      span{
+        background:$mount-famine;
+      }
+    }
+    div.downfall{
+      span{
+        background:$downfall;
+      }
+    }
+    div.the-naze{
+      span{
+        background:$the-naze;
+      }
+    }
+    div.rough-rock{
+      span{
+        background:$rough-rock;
+      }
+    }
+    div.brierley{
+      span{
+        background:$brierley;
+      }
+    }
+    div.kinder-stout{
+      span{
+        background:$kinder-stout;
+      }
+    }
+  }
+}
+.slick-list {
+  overflow: visible!important;
+}
+.carousel{
+  div.carousel-container{
+    background-image:url('../images/carousel-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color:#fff;
+    padding:4em;
+    position:relative;
+    @media only screen and(min-width:768px){
+      display:flex;
+      justify-content: center;
+      align-items:center;
+      min-height: 500px;
+    }
+  }
+  h2{
+    @include font-size(3.4);
+    font-weight:600;
+    text-align:center;
+    @media only screen and(min-width:768px){
+      text-align:left;
+    }
+  }
+  h3{
+    @include font-size(2);
+    font-weight:400;
+    text-align:center;
+    margin:0 0 1.5em 0;
+    @media only screen and(min-width:768px){
+      text-align:left;
+    }
+  }
+  p{
+    color:#fff;
+  }
+  a{
+    color:#fff;
+    text-decoration:underline;
+    font-weight:bold;
+  }
+  img{
+    width:70%;
+    margin:0 15%;
+    @media only screen and(min-width:768px){
+      width:300px;
+      margin:0 0 0 0;
+      position: absolute;
+      left:50px;
+      top:10px;
+    } 
+    @media only screen and(min-width:1024px){
+      left:100px;
+    }
+  }
+  .bottle-copy{
+    @media only screen and(min-width:768px){
+      width: 50%;
+      margin: 0 5% 0 40%;
+    } 
+    @media only screen and(min-width:1024px){
+      margin: 0 5% 0 30%;
+    }
+  }
+  button.slick-arrow{
+    background-image:url('../images/paginate.svg');
+    width:50px;
+    height:50px;
+    text-indent: -9999px;
+    border:none;
+    background-size: contain;
+    background-color:transparent;
+    z-index:100;
+  }
+  .slick-prev{
+    position:absolute;
+    top: 30%;
+    left: 5%;
+    @media only screen and(min-width:768px){
+      
+      left:2%;
+      top:50%;
+      
+
+    }
+  }
+  .slick-next{
+    transform: rotate(185deg);
+    -webkit-transform: rotate(185deg);
+    -moz-transform: rotate(185deg);
+    -ms-transform: rotate(185deg);
+    -o-transform: rotate(185deg);
+    position:absolute;
+    top: 30%;
+    right: 5%;
+    @media only screen and(min-width:768px){
+      
+      right:2%;
+      top:50%;
+    }
+  }
+}
+#mountfamine{
+  background-color:$mount-famine;
+}
+#downfall{
+  background-color:$downfall;
+}
+#thenaze{
+  background-color:$the-naze;
+}
+#roughrock{
+  background-color:$rough-rock;
+}
+#brierley{
+  background-color:$brierley;
+}
+#kinderstout{
+  background-color:$kinder-stout;
+}
+
+
+} 
