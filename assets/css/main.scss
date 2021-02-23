@@ -91,7 +91,7 @@ header{
 
 .about{
 
- 
+
 header{
   display:block;
   width:100%;
@@ -102,11 +102,24 @@ header{
 }
 section.about{
   padding:4em;
-  @media only screen and (min-width:768px){
-    columns: 2;
+  p{
+    width: 90%;
+    margin: 0 auto;
+    @include font-size(2.2);
+    @media only screen and (min-width:768px){
+      width:70%;
+    }
+  }
+  h3{
+    text-align: center;
+    @include font-size(2.8);
+    color:#505050;
+  }
+}
+section.story{
+  columns: 2;
     column-gap: 7em;
     padding: 8em 6em;
-  }
 }
 .logo{
   display:flex;
@@ -149,6 +162,19 @@ nav{
         }
       }
     }
+  }
+}
+ul{
+  padding:0;
+  text-align: center;
+  li{
+    list-style: none;
+    color: #505050;
+    @include font-size(2.2);
+    font-weight: 300;
+    line-height: 2.4rem;
+    display: inline-block;
+    margin: 0 1em 0.5em 1em;
   }
 }
 .hero{
