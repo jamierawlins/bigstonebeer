@@ -31,7 +31,7 @@ $kinder-stout: #BA7320;
 
 html {
   font-size: 62.5%; /* Sets up the Base 10 stuff */
-
+  overflow-x: hidden;
 }
 
 .bsb-logo{
@@ -41,9 +41,14 @@ html {
 
 p{
   color:#505050;
-  font-size:1.8rem;
+
+  @include font-size(2.4);
   font-weight:300;
-  line-height: 2.4rem;
+  line-height: 3rem;
+}
+a{
+  color:#505050;
+  text-decoration: underline;;
 }
 html, body {
   height: 100%;
@@ -52,6 +57,7 @@ body {
   margin: 0;
   background:#FCF0D9;
   font-family: 'Crimson Pro', serif;
+  overflow-x: hidden;
 }
 .flex-container {
   height: 100vh;
@@ -96,30 +102,46 @@ header{
   display:block;
   width:100%;
   @media only screen and (min-width:768px){
-    position:absolute;
+    position:relative;
     top:0px;
+  }
+}
+.main-wrapper{
+  @media only screen and (min-width:768px){
+    margin-top: -12em;
+  }
+  @media only screen and (min-width:1024px){
+    margin-top: -13.5em;
   }
 }
 section.about{
   padding:4em;
   p{
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     @include font-size(2.2);
     @media only screen and (min-width:768px){
-      width:70%;
+      width: 100%;
+      column-count: 2;
     }
   }
   h3{
-    text-align: center;
+    text-align: left;
     @include font-size(2.8);
     color:#505050;
+    margin:0 0 1em 0;
+    @media only screen and (min-width:768px){
+      text-align: center;
+    }
   }
 }
 section.story{
-  columns: 2;
+  padding: 8em 4em;
+  @media only screen and (min-width:768px){
+    columns: 2;
     column-gap: 7em;
     padding: 8em 6em;
+  }
 }
 .logo{
   display:flex;
@@ -166,7 +188,10 @@ nav{
 }
 ul{
   padding:0;
-  text-align: center;
+  text-align: left;
+  @media only screen and (min-width:768px){
+    text-align: center;
+  }
   li{
     list-style: none;
     color: #505050;
@@ -174,7 +199,10 @@ ul{
     font-weight: 300;
     line-height: 2.4rem;
     display: inline-block;
-    margin: 0 1em 0.5em 1em;
+    margin: 0 1em 0.5em 0;
+    @media only screen and (min-width:768px){
+      margin: 0 1em 0.5em 1em;
+    }
   }
 }
 .hero{
@@ -201,12 +229,20 @@ h1{
   text-transform:uppercase;
   width:50%;
   margin:0 auto;
+  letter-spacing: 10px;
   span{
     @include font-size(5.4);
     line-height:0.8em;
     @media only screen and (min-width:768px){
       @include font-size(6.4);
     }
+    @media only screen and (min-width:1200px){
+      @include font-size(10.4);
+      line-height:0.9em;
+    }
+  }
+  img{
+    margin: 1em 0 0.5em 0;
   }
 }
 .learn{
@@ -297,10 +333,15 @@ h1{
     }
   }
 }
+
 .slick-list {
-  overflow: visible!important;
+  overflow: visible;
+  @media only screen and(min-width:768px){
+    // overflow-y: visible!important;
+  }
 }
 .carousel{
+  // overflow-x: hidden;
   div.carousel-container{
     background-image:url('../images/carousel-bg.png');
     background-size: cover;
@@ -322,9 +363,12 @@ h1{
     @media only screen and(min-width:768px){
       text-align:left;
     }
+    @media only screen and(min-width:1024px){
+      @include font-size(5.4);
+    }
   }
   h3{
-    @include font-size(2);
+    @include font-size(2.8);
     font-weight:400;
     text-align:center;
     margin:0 0 1.5em 0;
@@ -419,6 +463,17 @@ h1{
 #kinderstout{
   background-color:$kinder-stout;
 }
-
+.form{
+  label{
+    width:100%;
+    input{
+      width:100%;
+      padding:1em
+    }
+    textarea{
+      width:100%;
+    }
+  }
+}
 
 } 

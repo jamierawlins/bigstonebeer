@@ -1,9 +1,9 @@
 {{ define "content"}}
 
-<div class="container-fluid p-0">
+<div class="container-fluid p-0 main-wrapper">
   <div class="hero">
     <h1>Award-Winning beers<br>
-      <hr>
+      <img src="/images/divider.svg">
     <span>Brewed in Chinley</span></h1>
   </div>
   <section class="bottles col-12">
@@ -135,22 +135,24 @@
 
   </section>
   <section>
-    <form name="contact" netlify>
-      <p>
+    <form name="contact" netlify class="col-10 offset-1 form">
+      <div class="row">
+      <div class="col-md-6">
         <label>Name <input type="text" name="name" /></label>
-      </p>
-      <p>
+      </div>
+      <div class="col-md-6">
         <label>Telephone <input type="tel" name="Telephone" /></label>
-      </p>
-      <p>
+      </div>
+      <div class="col-md-6">
         <label>Email <input type="email" name="email" /></label>
-      </p>
-      <p>
+      </div>
+      <div class="col-md-6">
         <label>Enquiry <textarea name="" id="" cols="30" rows="10"></textarea>
-      </p>
-      <p>
+      </div>
+      <div class="col-md-6">
         <button type="submit">Send</button>
-      </p>
+      </div>
+    </div>
     </form>
   </section>
 </div>
