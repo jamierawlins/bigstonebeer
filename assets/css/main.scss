@@ -57,7 +57,7 @@ body {
   margin: 0;
   background:#FCF0D9;
   font-family: 'Crimson Pro', serif;
-  overflow-x: hidden;
+  
 }
 .flex-container {
   height: 100vh;
@@ -121,8 +121,8 @@ section.about{
     margin: 0 auto;
     @include font-size(2.2);
     @media only screen and (min-width:768px){
-      width: 100%;
-      column-count: 2;
+      width: 87%;
+      
     }
   }
   h3{
@@ -134,6 +134,26 @@ section.about{
       text-align: center;
     }
   }
+  ul{
+    li{
+      width:100%;
+      background:brown;
+      color:#fff;
+      border-radius:4px;
+      -webkit-border-radius:4px;
+      -moz-border-radius:4px;
+      -ms-border-radius:4px;
+      -o-border-radius:4px;
+      padding:0.4em 1em;
+      @media only screen and (min-width:768px){
+        width:auto;
+      }
+      a{
+        color:white;
+        text-decoration:none;
+      }
+}
+  }
 }
 section.story{
   padding: 8em 4em;
@@ -141,6 +161,10 @@ section.story{
     columns: 2;
     column-gap: 7em;
     padding: 8em 6em;
+  }
+  h2{
+    color:#505050;
+    margin:0 0 0.5em 0;
   }
 }
 .logo{
@@ -206,8 +230,13 @@ ul{
   }
 }
 .hero{
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   background-image:url('../images/landscape.jpg');
   background-size: cover;
+  padding: 6em 0;
   @media only screen and (min-width:768px){
     margin-top: 6em;
     padding: 6em 4em;
@@ -219,30 +248,60 @@ ul{
   @media only screen and (min-width:1400px){
     padding: 7em 4em 30em 4em
   }
+  h2{
+    text-shadow: 3px 3px 3px #1F1F1F;
+      font-weight: 600;
+      margin:0 auto;
+      color:#fff;
+      text-transform:uppercase;
+      text-align:center;
+    width:50%;
+      @include font-size(5.4);
+      line-height:0.8em;
+      @media only screen and (min-width:768px){
+        @include font-size(6.4);
+      }
+      @media only screen and (min-width:1200px){
+        @include font-size(10.4);
+        line-height:0.9em;
+      }
+    }
 }
 
 h1{
   color:#fff;
   @include font-size(2.4);
-  padding:2em 0;
+  padding:0;
   text-align:center;
   text-transform:uppercase;
   width:50%;
   margin:0 auto;
   letter-spacing: 10px;
-  span{
-    @include font-size(5.4);
-    line-height:0.8em;
-    @media only screen and (min-width:768px){
-      @include font-size(6.4);
-    }
-    @media only screen and (min-width:1200px){
-      @include font-size(10.4);
-      line-height:0.9em;
-    }
+  font-weight: 600;
+  text-shadow: 3px 3px 3px #1F1F1F;
+}
+h2{
+
+  font-weight: 600;
+  margin:0 auto;
+  color:#fff;
+  text-transform:uppercase;
+
+  @include font-size(5.4);
+  line-height:0.8em;
+  @media only screen and (min-width:768px){
+    @include font-size(6.4);
   }
-  img{
-    margin: 1em 0 0.5em 0;
+  @media only screen and (min-width:1200px){
+    @include font-size(10.4);
+    line-height:0.9em;
+  }
+}
+img.divider-img{
+  margin: 2em 0;
+  width:50%;
+  @media only screen and (min-width:768px){
+    width:auto;
   }
 }
 .learn{
@@ -272,8 +331,12 @@ h1{
         -ms-transition: all 0.2 ease;
         -o-transition: all 0.2 ease;
       }
-      img{
+      picture{
         width:100%;
+        img{
+          width:100%;
+          height:auto;
+        }
       }
       a{
         color:white;
@@ -351,9 +414,9 @@ h1{
     position:relative;
     @media only screen and(min-width:768px){
       display:flex;
-      justify-content: center;
+      justify-content: space-around;
       align-items:center;
-      min-height: 500px;
+      min-height: 550px;
     }
   }
   h2{
@@ -384,28 +447,30 @@ h1{
     text-decoration:underline;
     font-weight:bold;
   }
-  img{
+  picture{
     width:70%;
     margin:0 15%;
     @media only screen and(min-width:768px){
-      width:300px;
+      width:468px;
       margin:0 0 0 0;
-      position: absolute;
-      left:50px;
-      top:10px;
+
     } 
-    @media only screen and(min-width:1024px){
-      left:100px;
+    
+    img{
+      width: 80%;
+      height: auto;
+      margin: 0 auto;
+      @media only screen and(min-width:768px){
+        width:100%;
+      }
     }
   }
   .bottle-copy{
     @media only screen and(min-width:768px){
       width: 50%;
-      margin: 0 5% 0 40%;
+      margin-right: 10%;
     } 
-    @media only screen and(min-width:1024px){
-      margin: 0 5% 0 30%;
-    }
+
   }
   button.slick-arrow{
     background-image:url('../images/paginate.svg');
@@ -416,6 +481,11 @@ h1{
     background-size: contain;
     background-color:transparent;
     z-index:100;
+    outline:0;
+    cursor:pointer;
+    &:hover{
+      opacity:0.5;
+    }
   }
   .slick-prev{
     position:absolute;
