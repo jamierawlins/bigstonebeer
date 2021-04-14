@@ -137,7 +137,7 @@ section.about{
   ul{
     li{
       width:100%;
-      background:brown;
+      background:#a28a59;
       color:#fff;
       border-radius:4px;
       -webkit-border-radius:4px;
@@ -147,6 +147,9 @@ section.about{
       padding:0.4em 1em;
       @media only screen and (min-width:768px){
         width:auto;
+      }
+      &:hover{
+        opacity:0.5;
       }
       a{
         color:white;
@@ -545,5 +548,12 @@ img.divider-img{
     }
   }
 }
-
+.contact{
+  padding: 8em 6em;
+  h3{
+    color: #505050;
+    font-weight: 600;
+    @include font-size(4.5);
+  }
+}
 } 
