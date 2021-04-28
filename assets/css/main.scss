@@ -95,7 +95,7 @@ header{
 
 /* NEW HOME TO REMOVE ABOUT */
 
-.about{
+.about,.privacy-policy{
 
 
 header{
@@ -115,7 +115,10 @@ header{
   }
 }
 section.about{
-  padding:4em;
+  padding:4em 2em;
+  @media only screen and (min-width:768px){
+    padding:4em;
+  }
   p{
     width: 100%;
     margin: 0 auto;
@@ -159,7 +162,7 @@ section.about{
   }
 }
 section.story{
-  padding: 8em 4em;
+  padding: 8em 2em 0em 2em;
   @media only screen and (min-width:768px){
     columns: 2;
     column-gap: 7em;
@@ -234,15 +237,15 @@ ul{
 }
 .hero{
   display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   background-image:url('../images/landscape.jpg');
   background-size: cover;
   padding: 6em 0;
   @media only screen and (min-width:768px){
     margin-top: 6em;
-    padding: 6em 4em;
+    padding: 12em 4em;
     margin: 6em 0 3em;
   }
   @media only screen and (min-width:1024px){
@@ -258,11 +261,12 @@ ul{
       color:#fff;
       text-transform:uppercase;
       text-align:center;
-    width:50%;
+      
       @include font-size(5.4);
       line-height:0.8em;
       @media only screen and (min-width:768px){
         @include font-size(6.4);
+        width:50%;
       }
       @media only screen and (min-width:1200px){
         @include font-size(10.4);
@@ -273,15 +277,19 @@ ul{
 
 h1{
   color:#fff;
-  @include font-size(2.4);
+  @include font-size(2);
   padding:0;
   text-align:center;
   text-transform:uppercase;
-  width:50%;
+  width:100%;
   margin:0 auto;
   letter-spacing: 10px;
   font-weight: 600;
   text-shadow: 3px 3px 3px #1F1F1F;
+  @media only screen and (min-width:768px){
+    @include font-size(2.4);
+width:50%;
+  }
 }
 h2{
 
@@ -303,7 +311,8 @@ h2{
 img.divider-img{
   margin: 2em 0;
   width:50%;
-  @media only screen and (min-width:768px){
+
+  @media only screen and (min-width:1024px){
     width:auto;
   }
 }
@@ -326,13 +335,16 @@ img.divider-img{
       text-align:center;
       span{
         display:block;
-        padding:5em 2em 2em 2em;
+        padding:5em 1em 2em 1em;
         margin:-4em 0 0 0;
         transition: all 0.2 ease;
         -webkit-transition: all 0.2 ease;
         -moz-transition: all 0.2 ease;
         -ms-transition: all 0.2 ease;
         -o-transition: all 0.2 ease;
+        @media only screen and (min-width:768px){
+          padding:5em 2em 2em 2em;
+        }
       }
       picture{
         width:100%;
@@ -512,7 +524,6 @@ img.divider-img{
     top: 30%;
     right: 5%;
     @media only screen and(min-width:768px){
-      
       right:2%;
       top:50%;
     }
@@ -539,21 +550,98 @@ img.divider-img{
 .form{
   label{
     width:100%;
+    @include font-size(1.8);
+    text-transform: uppercase;
     input{
       width:100%;
-      padding:1em
+      padding: 0.7em 1em;
+      border: solid 2px #324521;
+      border-radius: 4px;
+      background: #fcf0d9;
+      outline:0;
+    }
+    input:focus,
+    textarea:focus{
+      background: #ffffff!important;
     }
     textarea{
       width:100%;
+      border: solid 2px #324521;
+      border-radius: 4px;
+      background: #fcf0d9;
+      padding: 0.7em 1em;
+      outline:0;
     }
   }
 }
 .contact{
-  padding: 8em 6em;
+  position:relative;
+  padding: 8em 0em;
+  @media only screen and(min-width:768px){
+    padding: 8em 6em;
+  }
   h3{
     color: #505050;
     font-weight: 600;
     @include font-size(4.5);
+    text-transform:uppercase;
+    margin-bottom:1.5em;
+  }
+  button{
+    background: #324521;
+    color: #fff;
+    border: none;
+    padding: 0.4em 2em;
+    font-size: 18px;
+    cursor: pointer;
+    &:hover{
+      color: #324521;
+    background: #fff;
+    }
+  }
+  .social{
+    margin:4em 0 0 0;
+    @media only screen and(min-width:768px){
+      margin-top:-11em;
+    }
+    h3{
+      margin-bottom: 0.5em;
+      @include font-size(4);
+    }
+    a{
+      margin-right:2em;
+    }
+  }
+  
+
+}
+footer{
+  background:white;
+  padding: 8em 6em;
+  p{
+    @include font-size(1.8);
   }
 }
-} 
+} .privacy-policy{
+  h3{
+    @include font-size(3);
+    color:#505050;
+    margin:2em 0 0.5em 0;
+  }
+  h4{
+    @include font-size(2.6);
+    color:#505050;
+    margin:2em 0 0.5em 0;
+  }
+  ul{
+    text-align:left;
+    margin:0 0 0 3em;
+    li{
+      list-style-type: disc;
+      padding: 0 0 0 1em;
+      margin: 0px 0 0.5em 0;
+      width: 100%;
+      display: list-item;
+    }
+  }
+}
