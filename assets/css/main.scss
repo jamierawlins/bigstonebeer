@@ -333,6 +333,15 @@ img.divider-img{
   .row{
     div{
       text-align:center;
+      width:50%;
+      @media only screen and (min-width:768px){
+        width: 25%;
+      }
+      @media only screen and (min-width:1024px){
+        width: 12.5%;
+      }
+
+
       span{
         display:block;
         padding:5em 1em 2em 1em;
@@ -343,7 +352,7 @@ img.divider-img{
         -ms-transition: all 0.2 ease;
         -o-transition: all 0.2 ease;
         @media only screen and (min-width:768px){
-          padding:5em 2em 2em 2em;
+          padding:5em 10px 2em 10px;
         }
       }
       picture{
@@ -356,6 +365,7 @@ img.divider-img{
       a{
         color:white;
         text-transform:uppercase;
+        text-decoration:none;
         @include font-size(1.6);
         @media only screen and (min-width:768px){
           @include font-size(1);
@@ -369,7 +379,7 @@ img.divider-img{
       }
       &:hover{
         span{
-          padding:15em 2em 2em 2em;
+          padding:15em 10px 2em 10px;
           margin:-14em 0 0 0;
           transition: all 0.2s ease;
           -webkit-transition: all 0.2s ease;
