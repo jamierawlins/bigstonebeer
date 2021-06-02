@@ -28,6 +28,9 @@ $the-naze: #CE4722;
 $rough-rock: #897448;
 $brierley: #BA1D34;
 $kinder-stout: #A1631B;
+$no-ones-fool: #6E9D05;
+$theres-the-rub: #FC092E;
+$white-rakes: #DF8807;
 
 html {
   font-size: 62.5%; /* Sets up the Base 10 stuff */
@@ -331,14 +334,16 @@ img.divider-img{
     margin-top: -30em;
   }
   .row{
+    align-items: center;
+    justify-content: center;
     div{
       text-align:center;
       width:50%;
       @media only screen and (min-width:768px){
-        width: 25%;
+        width: 19.9%;
       }
       @media only screen and (min-width:1024px){
-        width: 12.5%;
+        width: 19.9%;
       }
 
 
@@ -417,6 +422,21 @@ img.divider-img{
     div.kinder-stout{
       span{
         background:$kinder-stout;
+      }
+    }
+    div.no-ones-fool{
+      span{
+        background:$no-ones-fool;
+      }
+    }
+    div.white-rakes{
+      span{
+        background:$white-rakes;
+      }
+    }
+    div.theres-the-rub{
+      span{
+        background:$theres-the-rub;
       }
     }
   }
@@ -556,6 +576,15 @@ img.divider-img{
 }
 #kinderstout{
   background-color:$kinder-stout;
+}
+#noonesfool{
+  background-color:$no-ones-fool;
+}
+#whiterakes{
+  background-color:$white-rakes;
+}
+#therestherub{
+  background-color:$theres-the-rub;
 }
 .form{
   label{
