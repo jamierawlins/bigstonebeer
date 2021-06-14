@@ -92,13 +92,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-header{
-  display:none;
-}
 
-/* NEW HOME TO REMOVE ABOUT */
-
-.about,.privacy-policy{
 
 
 header{
@@ -661,7 +655,8 @@ footer{
     @include font-size(1.8);
   }
 }
-} .privacy-policy{
+
+.privacy-policy{
   h3{
     @include font-size(3);
     color:#505050;
