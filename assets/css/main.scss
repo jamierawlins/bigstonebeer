@@ -60,7 +60,9 @@ body {
   margin: 0;
   background:#FCF0D9;
   font-family: 'Crimson Pro', serif;
-  
+  @media only screen and (max-width:768px){
+    overflow-x: hidden;
+  }
 }
 .flex-container {
   height: 100vh;
